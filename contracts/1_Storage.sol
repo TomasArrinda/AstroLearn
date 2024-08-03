@@ -8,9 +8,9 @@ pragma solidity >=0.8.2 <0.9.0;
  * @custom:dev-run-script ./scripts/deploy_with_ethers.ts
  */
 contract Storage {
-
-    uint256 number;
+	uint256 number;
     string psychologistComment;
+    string userComment;
 
     /**
      * @dev Store value in variable
@@ -19,18 +19,28 @@ contract Storage {
     function storeNum(uint256 num) public {
         number = num;
     }
+
     function storePsychologistComment(string memory mesg) public {
-        PsychologistComment = mesg;
+        psychologistComment = mesg;
+    }
+
+    function storeUserComment(string memory mesg) public {
+        userComment = mesg;
     }
 
     /**
-     * @dev Return value 
+     * @dev Return value
      * @return value of 'number'
      */
-    function retrieveNum() public view returns (uint256){
+    function retrieveNum() public view returns (uint256) {
         return number;
     }
-    function retrievePsychologistComment() public view returns (string memory){
-        return PsychologistComment;
+
+    function retrievePsychologistComment() public view returns (string memory) {
+        return psychologistComment;
+    }
+
+    function retrieveUserComment() public view returns (string memory) {
+        return userComment;
     }
 }
