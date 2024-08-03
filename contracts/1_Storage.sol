@@ -10,7 +10,7 @@ pragma solidity >=0.8.2 <0.9.0;
 contract Storage {
 
     uint256 number;
-    string message;
+    string psychologistComment;
 
     /**
      * @dev Store value in variable
@@ -19,8 +19,8 @@ contract Storage {
     function storeNum(uint256 num) public {
         number = num;
     }
-    function storeMessage(string memory mesg) public {
-        message = mesg;
+    function storePsychologistComment(string memory mesg) public {
+        PsychologistComment = mesg;
     }
 
     /**
@@ -30,7 +30,7 @@ contract Storage {
     function retrieveNum() public view returns (uint256){
         return number;
     }
-    function retrieveMessage() public view returns (string memory){
-        return message;
+    function retrievePsychologistComment() public view returns (string memory){
+        return PsychologistComment;
     }
 }
